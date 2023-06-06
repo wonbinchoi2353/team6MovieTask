@@ -11,7 +11,7 @@ async function getMovieDetail() {
         }
     };
     try {
-        movie_details = await fetch('https://api.themoviedb.org/3/movie/${movieId}?language=en-US', options)
+        movie_details = await fetch('https://api.themoviedb.org/1/movie/${movieId}?language=en-US', options)
         // 패치로 가져온 데이터를 movies에 할당
     } catch (error) {
         alert('오류'); // 오류시 오류알림
@@ -21,7 +21,7 @@ async function getMovieDetail() {
 
 
 async function renderMovies() {  /* 패치로 가져온 데이터를 찍는 과정 */
-    let detail = await getMovieDetail(); // 객체구조분해할당 방식으로 변수저장을 해줘야한다. getMovie()로 가져온 데이터는 배열이기 때문에 객체로 변환
+    let detail = await getMovieDetail(); 
     console.log(detail)
        // setpage(movies) // movies 라는 객체를 받아서 화면에 출력하는 함수
 }
