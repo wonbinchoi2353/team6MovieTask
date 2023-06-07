@@ -1,0 +1,13 @@
+/*대충 이것 저것 따라 해보고 구현된 모습 보면서 조정하기*/
+
+.detail-poster {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  padding-bottom: 50%;
+
+  background-repeat: no-repeat;
+  background-position: center;
+}
