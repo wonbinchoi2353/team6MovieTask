@@ -1,6 +1,3 @@
-export { setpage };
-
-
 const setpage = function (arr) { // 데이터를 찍는 함수
     let html = '';
 
@@ -19,3 +16,5 @@ const setpage = function (arr) { // 데이터를 찍는 함수
     let container = document.querySelector('.card-list');
     container.innerHTML = html;
 }
+
+export { setpage };
