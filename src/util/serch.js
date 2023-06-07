@@ -1,5 +1,5 @@
-import { setpage } from "./set-page.js";
-import { getMovies } from "./get-movies.js";
+import { setpage } from "../data/set-page.js";
+import { getMovies } from "../data/get-movies.js";
 export { search }
 
 async function search() { //검색으로 새로 불러오는 데이터 
