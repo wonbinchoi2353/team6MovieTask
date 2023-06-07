@@ -1,5 +1,5 @@
-import { setpage } from "./setpage.js";
-import { getMovies } from "./getMovies.js";
+import { setpage } from "./set-page.js";
+import { getMovies } from "./get-movies.js";
 export { renderMovies }
 
 async function renderMovies() {  /* 패치로 가져온 데이터를 찍는 과정 */

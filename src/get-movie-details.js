@@ -1,8 +1,8 @@
-export { renderMovieDetail };
+export { renderMovieDetails };
 // import { cur } from "./getId.js";
 
 
-async function getMovieDetail(movieId) {
+async function getMovieDetails(movieId) {
     let movie_details  
     const options = {
         method: 'GET',
@@ -23,8 +23,8 @@ async function getMovieDetail(movieId) {
 }
 
 
-async function renderMovieDetail(movieId) {  /* 패치로 가져온 데이터를 찍는 과정 */
-    let detail = await getMovieDetail(movieId); 
+async function renderMovieDetails(movieId) {  /* 패치로 가져온 데이터를 찍는 과정 */
+    let detail = await getMovieDetails(movieId); 
     console.log(detail)
        // setpage(movies) // movies 라는 객체를 받아서 화면에 출력하는 함수
 }

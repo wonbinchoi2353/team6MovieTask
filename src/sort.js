@@ -1,5 +1,5 @@
-import { setpage } from "./setpage.js";
-import { getMovies } from "./getMovies.js";
+import { setpage } from "./set-page.js";
+import { getMovies } from "./get-movies.js";
 
 export { sort_date, sort_title, sort_vote, sort };
 

@@ -1,10 +1,10 @@
-import { getMovies } from "./getMovies.js";
-import { renderMovies } from "./renderMovies.js";
+import { getMovies } from "./get-movies.js";
+import { renderMovies } from "./render-movies.js";
 import { sort_date, sort_title, sort_vote, sort } from "./sort.js";
 import { search } from "./serch.js";
-import { onKeyUp } from "./onKeyup.js";
+import { onKeyUp } from "./on-key-up.js";
 // import { cur } from "./getId.js";
-import { renderMovieDetail } from "./getMovies-detail.js";
+import { renderMovieDetails } from "./get-movie-details.js";
 
 renderMovies(); // 동작
 // Uncaught ReferenceError: search is not defined
@@ -21,7 +21,7 @@ document.querySelector('#search-btn2').addEventListener('click', sort)
 document.addEventListener('keydown', onKeyUp)
 document.querySelector('.card-list').addEventListener('click', function(e){
     const id = cur(e);
-    renderMovieDetail(id)
+    renderMovieDetails(id)
 })
 // alert("ID : " +document.getElementById(e.getAttribute('id')).getAttribute('id'));
 
