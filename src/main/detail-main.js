@@ -7,12 +7,9 @@ document.querySelector('#home-btn').addEventListener('click', function () {
 });
 // ----------------------위에는 기존
 
-
-
-// movieId 
+// movieId
 let urlMovieId = new URL(location.href).searchParams;
 let movieId = urlMovieId.get('movie_id');
-
 
 // 스파이더맨 자리에 movieId 넣은
 let detailPageTitle = document.querySelector('.details-title');
@@ -57,27 +54,28 @@ reviewBtn.addEventListener('click', function () {
     strReviews = JSON.stringify(reviews);
     localStorage.setItem('reviews', strReviews);
   }
-  saveReview()
+  saveReview();
 });
 
 function renderReview() {
-
   let reviews = [];
   let strReviews = [];
   // localStorage에서 꺼낸 문자열을 다시 배열로 변환
   strReviews = localStorage.getItem('reviews');
   reviews = JSON.parse(strReviews);
-  let detailPageReviews = reviews.filter(review => review.movieId === movieId);
+  if (reviews !== null) {
+    let detailPageReviews = reviews.filter(review => review.movieId === movieId);
+    const reviewList = document.querySelector('.review-list');
+    detailPageReviews.forEach(review => {
+      let postReviewWriter = review.reviewWriter;
+      let postReviewContent = review.reviewContent;
 
-  // 로컬 스토리지 데이터를 가져와서 리뷰 리스트 만들기
-  const reviewList = document.querySelector('.review-list');
-  detailPageReviews.forEach(review => {
-    let postReviewWriter = review.reviewWriter;
-    let postReviewContent = review.reviewContent;
-
-    reviewList.innerHTML += `<div class="review">
+      reviewList.innerHTML += `<div class="review">
                                             <p class="review-Writer">${postReviewWriter}</p>
                                             <p class="review-Text">${postReviewContent}</p>
                                         </div>`;
-  });
+    });
+  }
+
+  // 로컬 스토리지 데이터를 가져와서 리뷰 리스트 만들기
 }
