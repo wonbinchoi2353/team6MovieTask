@@ -51,21 +51,11 @@
 </head>
 
 <body>
+  <button id="home-btn">home</button>
   <div class="mybox" id="detail-list"></div>
-  <script type="module" src="./src/detail-main.js" defer></script>
+  
+  <script type="module" src="./src/main/detail-main.js" defer></script>
 
-  <!--홈버튼-->
-  <button id="homeButton">home</button>
-
-  <!--홈버튼 기능-->
-  <script>
-    // 홈 버튼 클릭 이벤트 처리
-    var homeButton = document.getElementById('homeButton');
-    homeButton.addEventListener('click', function () {
-      //메인 페이지로 이동
-      window.location.href = 'index.html';
-    });
-  </script>
 </body>
 
 </html>
