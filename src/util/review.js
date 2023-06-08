@@ -15,6 +15,26 @@ const reviewFunc = () => {
     let reviews = [];
     let strReviews = [];
 
+
+    //+추가 기능: 입력하는 화면에서 비밀번호를 입력할 때 블러 처리
+    document.getElementById("reviewPassword").addEventListener('blur', function () {
+      this.setAttribute("type", "password");
+    });
+
+
+    //유효성 검사
+    //기본형
+    // if (reviewWriter.trim() === '' || reviewPassword.trim() === '' || reviewContent.trim() === '') {
+    //   alert('빈칸에 내용을 채워주세요.');
+    //   return;
+    // }
+
+
+
+
+
+
+
     // 리뷰 로컬 스토리지에 저장
     function saveReview() {
       // 인풋값이 없으면 리뷰 저장 취소
@@ -68,5 +88,6 @@ const reviewFunc = () => {
   });
 };
 reviewFunc();
+
 
 
