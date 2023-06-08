@@ -23,13 +23,23 @@ let review = () => {
 review();
 
 function saveReview() {
-  console.log('saveReview() 함수가 호출되었습니다.')
+  // console.log('saveReview() 함수가 호출되었습니다.')
 
   // movieId
   let urlMovieId = new URL(location.href).searchParams;
   let movieId = urlMovieId.get('movie_id');
   // 디테일 페이지 영화 제목
   let detailPageTitle = document.querySelector('.details-title').textContent;
+  //+ 비밀번호 입력 필드에 blur 이벤트 리스너 추가
+  let passwordInput = document.querySelector('.password');
+  passwordInput.addEventListener('blur', checkInput);
+
+  //입력 확인 함수
+  function checkInput() {
+    //비밀번호 입력 필드 요소? 가져오기
+    let passwordInput = document.querySelector('.password');
+  }
+
   // 인풋값 가져오기
   let reviewWriter = document.querySelector('.writer').value;
   let reviewPassword = document.querySelector('.password').value;
