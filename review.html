@@ -1,0 +1,51 @@
+<!-- 기능 구현용 임시 페이지 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>영화 상세 페이지</title>
+    <link rel="stylesheet" href="/style/style.css" />
+    <script src="/src/review.js" defer></script>
+  </head>
+  <style>
+    .review-box {
+      background-color: #ccac5b;
+      width: 300px;
+      height: 180px;
+      margin: 10px auto;
+
+      text-align: center;
+    }
+
+    .review-list {
+      display: flex;
+      display: grid;
+      justify-content: center;
+      grid-template-rows: repeat(auto-fill, minmax(0, 1fr));
+      gap: 30px;
+      padding: 50px;
+    }
+
+    .review {
+      background-color: #ccac5b;
+      width: 300px;
+      padding: 20px;
+      text-align: left;
+      word-wrap: break-word;
+    }
+  </style>
+  <body>
+    <h1 class="details-title">스파이더맨</h1>
+    <div class="review-box">
+      <div>
+        <p><label for="">작성자</label><input type="text" class="writer" /></p>
+        <p><label for="">확인비밀번호</label><input type="text" class="password" /></p>
+        <textarea class="review-text" name="" id="" cols="30" rows="5"></textarea>
+        <button class="review-btn">리뷰 등록하기</button>
+      </div>
+      <div class="review-list"></div>
+    </div>
+  </body>
+</html>
