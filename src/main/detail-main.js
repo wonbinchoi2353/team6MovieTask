@@ -7,7 +7,7 @@ document.querySelector('#home-btn').addEventListener('click', function () {
 });
 // ----------------------위에는 기존
 
-// movieId
+// movieId 를 가져옴
 let urlMovieId = new URL(location.href).searchParams;
 let movieId = urlMovieId.get('movie_id');
 
@@ -63,7 +63,7 @@ function renderReview() {
   // localStorage에서 꺼낸 문자열을 다시 배열로 변환
   strReviews = localStorage.getItem('reviews');
   reviews = JSON.parse(strReviews);
-  if (reviews !== null) {
+  if (reviews !== null) { // 데이터베이스거 null 일때 오류, null이 아닐때만 동작하는 if문
     let detailPageReviews = reviews.filter(review => review.movieId === movieId);
     const reviewList = document.querySelector('.review-list');
     detailPageReviews.forEach(review => {
