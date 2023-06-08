@@ -1,50 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
     <title>내배캠 최고 평점 영화</title>
     <script type="module" src="./src/main.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>내배캠 최고 평점 영화 콜렉션</h1>
+      <h1>내배캠 최고 평점 영화 콜렉션</h1>
     </header>
     <div class="search">
-        <label>영화 검색 : </label>
-        <input type="text" id="search-input">
-        <button type="button" id="search-btn">검색</button>
+      <label>영화 검색 : </label>
+      <input type="text" id="search-input" />
+      <button type="button" id="search-btn">검색</button>
     </div>
     <div class="sort">
-        <select id="select">
-            <option value="name">선택하세요</option>
-            <option value="name">이름</option>
-            <option value="date">출시일</option>
-            <option value="vote">평점</option>
-        </select>
-        <button type="button" id="search-btn2">정렬</button>
+      <select id="select">
+        <option value="name">선택하세요</option>
+        <option value="name">이름</option>
+        <option value="date">출시일</option>
+        <option value="vote">평점</option>
+      </select>
+      <button type="button" id="search-btn2">정렬</button>
     </div>
     <section class="card-list"></section>
-</body>
-<footer>
+  </body>
+  <footer>
     <div class="search" id="page">
-        <h4 style="margin-right: 20px;">페이지</h4>
-        <select id="page">
-            <option name="page" value="1">1</option>
-            <option name="page" value="2">2</option>
-            <option name="page" value="3">3</option>
-            <option name="page" value="4">4</option>
-            <option name="page" value="5">5</option>
-        </select>
-        <button type="button" onclick="renderMovies()" id="search-btn">이동</button>
+      <h4 style="margin-right: 20px">페이지</h4>
+      <select id="page">
+        <option name="page" value="1">1</option>
+        <option name="page" value="2">2</option>
+        <option name="page" value="3">3</option>
+        <option name="page" value="4">4</option>
+        <option name="page" value="5">5</option>
+      </select>
+      <button type="button" onclick="renderMovies()" id="search-btn">이동</button>
     </div>
-    <div id="zxcv">
-        안녕하세용
-    </div>
-</footer>
-
+    <div id="zxcv">안녕하세용</div>
+  </footer>
 </html>

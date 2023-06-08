@@ -1,46 +1,44 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .mybox {
-            width: 95%;
-            max-width: 700px;
-            padding: 20px;
-            box-shadow: 0px 0px 10px 0px lightblue;
-            margin: 20px auto;
-        }
-        .mybox>li {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
+      .mybox {
+        width: 95%;
+        max-width: 700px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px 0px lightblue;
+        margin: 20px auto;
+      }
+      .mybox > li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
 
-            margin-bottom: 10px;
-            min-height: 48px;
-        }
+        margin-bottom: 10px;
+        min-height: 48px;
+      }
 
-        .mybox>li>h2 {
-            max-width: 75%;
-            font-size: 20px;
-            font-weight: 500;
-            margin-right: auto;
-            margin-bottom: 0px;
-        }
+      .mybox > li > h2 {
+        max-width: 75%;
+        font-size: 20px;
+        font-weight: 500;
+        margin-right: auto;
+        margin-bottom: 0px;
+      }
 
-        .mybox>li>h2.done {
-            text-decoration: line-through;
-        }
-
+      .mybox > li > h2.done {
+        text-decoration: line-through;
+      }
     </style>
-</head>
-<body>
-    <div class="mybox" id="detail-list">
-    </div>
+  </head>
+  <body>
+    <div class="mybox" id="detail-list"></div>
     <script type="module" src="./src/detail-main.js" defer></script>
-</body>
+  </body>
 </html>
 
 <!-- 상세 페이지입니다 style은 무시하셔도 됩니다 -->

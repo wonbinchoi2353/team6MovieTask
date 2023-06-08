@@ -1,4 +1,3 @@
-import { renderMovieDetails } from "./data/render-movie-details.js"
+import { renderMovieDetails } from './data/render-movie-details.js';
 
-
-renderMovieDetails()
+renderMovieDetails();
