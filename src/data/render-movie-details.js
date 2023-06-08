@@ -10,8 +10,8 @@ async function renderMovieDetails() {
     <li><h2>✅제목 : ${movie_detail.title}</h2></li>
 <li><h2>${movie_detail['tagline']}</h2></li>
 <li><h2>상영시간 : ${movie_detail.runtime}</h2></li>
-<li><h2> 평점 : ${movie_detail.vote_average}</h2></li>
-`; // 예진님html >>
+<li><h2> 평점 : ${movie_detail.vote_average}</h2></li>;
+<p>개봉일 : ${movie_detail.releaseDate}</p>`
 
   let container = document.querySelector('#detail-list');
   container.innerHTML = html;
