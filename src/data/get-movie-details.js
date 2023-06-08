@@ -1,9 +1,8 @@
-export { renderMovieDetails };
-// import { cur } from "./getId.js";
-
-
-async function getMovieDetails(movieId) {
+async function getMovieDetails() { // url의 파라미터 기반으로 상세정보 fetch
     let get_movie_details
+    let urlMovieId = new URL(location.href).searchParams;
+    let movieId = urlMovieId.get('movie_id')
+
     const options = {
         method: 'GET',
         headers: {
@@ -22,9 +21,4 @@ async function getMovieDetails(movieId) {
     return get_movie_details.json() // 받은 데이터를 json 형식으로 반환
 }
 
-// 상세정보 뿌릴준비
-async function renderMovieDetails(movieId) {  
-    let movie_detail = await getMovieDetails(movieId);
-    let title = movie_detail.title
-    console.log(title)
-}
+export { getMovieDetails };
