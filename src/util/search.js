@@ -7,6 +7,14 @@ async function search() {
   let { results: movies } = await getMovies();
   let inputtext;
   inputtext = document.getElementById('search-input').value.toUpperCase(); // 대문자 변환해서 입력받은 데이터 할당
+
+  //검색 유효성 검사
+  if (inputtext.trim() === '') {
+    alert('검색어를 입력해주세요.');
+    return;
+  }
+
+
   const searchData = movies.filter(x => {
     let a = x.title.toUpperCase();
     return a.includes(inputtext);
@@ -14,11 +22,4 @@ async function search() {
 
   setpage(searchData);
 }
-
-
-// //검색 유효성 검사
-// if (inputtext.trim() === '') {
-//   alert('검색어를 입력하세요.');
-//   return;
-// }
 
