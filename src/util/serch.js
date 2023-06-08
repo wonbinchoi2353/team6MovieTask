@@ -16,3 +16,9 @@ async function search() {
 }
 
 
+//검색 유효성 검사
+if (inputtext.trim() === '') {
+  alert('검색어를 입력하세요.');
+  return;
+}
+
