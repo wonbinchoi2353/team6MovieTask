@@ -9,6 +9,7 @@ const setpage = function (arr) {
             <h3>${x.title}</h5>
             <p>${x.overview}</p>
             <p>평점 : ${x.vote_average}</p>
+            
         </div>
     `;
     html += htmlSegment;
