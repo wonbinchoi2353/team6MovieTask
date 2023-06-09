@@ -1,8 +1,7 @@
 export { getMovies };
 
-async function getMovies() {
+async function getMovies(a) {
   let movies;
-
   const options = {
     method: 'GET',
     headers: {
@@ -12,7 +11,7 @@ async function getMovies() {
     },
   };
   try {
-    movies = await fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=5`, options);
+    movies = await fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${a}`, options);
     // 패치로 가져온 데이터를 movies에 할당
   } catch (error) {
     alert('오류'); // 오류시 오류알림
