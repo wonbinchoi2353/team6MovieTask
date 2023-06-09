@@ -1,4 +1,4 @@
-import { search } from './search.js';
+import { search } from './serch.js';
 export { onKeyUp };
 
 function onKeyUp(e) {
