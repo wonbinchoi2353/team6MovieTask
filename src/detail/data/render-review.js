@@ -18,17 +18,17 @@ function renderReview() {
     let postReviewContent = review.reviewContent;
 
     reviewList.innerHTML += `<div class="mybox" id="${review.dateId}">
-        <div><input class="review-Writer" value="${postReviewWriter}"></input></div>
-        <div><input class="review-Text" value="${postReviewContent}"></input></div>
-        <button class="modify-Btn">수정</button>
-        <p><label for="">확인비밀번호</label>
-        <input type="text" class="checkPwd"></p>
-        <button class="delete-Btn">삭제</button>
-        </div>`;
+    <div>${postReviewWriter}</div>
+    <div>${postReviewContent}</div>
+    <button class="modify-Btn">수정</button>
+    <button class="delete-Btn">삭제</button>
+    <div><input class='checkPwd' placeholder='삭제번호를 입력해주세요'></div>
+    </div>`;
   });
 }
 
 function saveReview() {
+  let detailPageTitle = document.querySelector('.detailPageTitle').textContent;
   // 인풋값 가져오기
   let reviewWriter = document.querySelector('.writer').value;
   let reviewPassword = document.querySelector('.password').value;
@@ -49,6 +49,7 @@ function saveReview() {
   // 인풋값 배열에 추가하기, 단축 속성명?
   reviews.push({
     movieId,
+    detailPageTitle,
     dateId,
     reviewWriter,
     reviewPassword,
