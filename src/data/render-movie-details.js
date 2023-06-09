@@ -4,7 +4,6 @@ async function renderMovieDetails() {
   // getMovieDetails로 가져온 데이터
   let movie_detail = await getMovieDetails();
   let html = '';
-  console.log(movie_detail)
 
   html = `<img src="https://image.tmdb.org/t/p/w500${movie_detail.backdrop_path}">
     <li><h1>✅${movie_detail.title}</h1></li>
