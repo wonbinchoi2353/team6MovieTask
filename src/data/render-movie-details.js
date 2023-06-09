@@ -6,8 +6,8 @@ async function renderMovieDetails() {
   let html = '';
 
   html = `<img src="https://image.tmdb.org/t/p/w500${movie_detail.backdrop_path}">
-    <li><h1 class='detailPageTitle'>✅${movie_detail.title}</h1></li>
-    <li><h2>✅original title : ${movie_detail.original_title}</h2></li>
+    <li><h1>✅${movie_detail.title}</h1></li>
+    <li><h2 class='detailPageTitle'> ✅original title : ${movie_detail.original_title}</h2></li>
     <li><h3>${movie_detail['tagline']}</h2></li>
     <li><h4>장르 : ${movie_detail.genres[0].name}</h3></li>
 <li><h4>상영시간 : ${movie_detail.runtime}분</h2></li>
