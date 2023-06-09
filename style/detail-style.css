@@ -156,12 +156,13 @@ body {
 
 /* 리뷰 관련 추가 */
 .review-list {
-  display: flex;
-  display: grid;
-  justify-content: center;
-  grid-template-rows: repeat(auto-fill, minmax(0, 1fr));
-  gap: 30px;
-  padding: 50px;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: center;
+    margin-left: 10px;
+    padding-left: 150px;
+  
 }
 
 .review {
@@ -182,3 +183,4 @@ body {
 .modify-Btn {
   color: white;
 }
+
