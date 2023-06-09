@@ -62,7 +62,10 @@ function checkInput() {
 
 
 function saveReview() {
-  checkInput()
+  //유효성 검사 실패 시 리뷰 저장 취소
+  if (!checkInput()) {
+    return;
+  }
   // 디테일 페이지 영화 
   let detailPageTitle = document.querySelector('.detailPageTitle').textContent;
   // 인풋값 가져오기
