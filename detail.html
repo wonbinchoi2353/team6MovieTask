@@ -1,25 +1,28 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./style/detail-style.css" />
-  </head>
 
-  <body>
-    <button id="home-btn">Home</button>
-    <div class="mybox" id="detail-list"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./style/detail-style.css" />
+</head>
 
-    <div class="review-box">
-      <div class="mybox">
-        <p><label for="">작성자</label><input type="text" class="writer" /></p>
-        <p><label for="">확인비밀번호</label><input type="text" class="password" /></p>
-        <textarea class="review-text" name="" id="" cols="30" rows="5"></textarea>
-        <button class="review-btn">리뷰 등록하기</button>
-      </div>
-      <div class="review-list"></div>
+<body>
+  <button id="home-btn">Home</button>
+  <div class="mybox" id="detail-list"></div>
+
+  <div class="review-box">
+    <div class="mybox">
+      <p><label for="">작성자</label><input type="text" class="writer" /></p>
+      <p><label for="">확인비밀번호</label><input type="text" class="password" /></p>
+      <textarea class="review-text" name="" id="" cols="30" rows="5"></textarea>
+      <button class="review-btn">리뷰 등록하기</button>
     </div>
-    <script type="module" src="./src/main/detail-main.js" defer></script>
-  </body>
+    <div class="review-list"></div>
+  </div>
+  <script type="module" src="./src/main/detail-main.js" defer></script>
+  <script type="module" src="./src/util/review.js" defer></script>
+</body>
+
 </html>

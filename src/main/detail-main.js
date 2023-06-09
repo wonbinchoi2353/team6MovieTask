@@ -15,28 +15,64 @@ let movieId = urlMovieId.get('movie_id');
 console.log("reviews", reviews)
 
 let addReview = () => {
-    if (localStorage.length >= 1){
-      renderReview();
-      // deleteReview();
-      modifyReview();
-    }
+  if (localStorage.length >= 1) {
+    renderReview();
+    // deleteReview();
+    modifyReview();
+  }
   const reviewBtn = document.querySelector('.review-btn');
-  
-  reviewBtn.addEventListener('click', function () {    
+
+  reviewBtn.addEventListener('click', function () {
     saveReview();
     renderReview();
   });
 };
 addReview();
 
+function checkInput() {
+  //비밀번호 입력 필드 요소? 가져오기
+  let passwordInput = document.querySelector('.password');
+
+
+  // 인풋값 가져오기
+  let reviewWriter = document.querySelector('.writer').value;
+  let reviewPassword = document.querySelector('.password').value;
+  let reviewContent = document.querySelector('.review-text').value;
+
+  // 유효성 검사: 작성자명의 길이 검사
+  if (reviewWriter.length === 0 || reviewWriter.length >= 6) {
+    alert('작성자명은 0자 초과 6자 미만이어야 합니다.');
+    return false;
+  }
+
+  // 유효성 검사: 비밀번호 길이 검사
+  if (reviewPassword.length === 0 || reviewPassword.length >= 10) {
+    console.log(reviewPassword);
+    alert('비밀번호는 0자 초과 10자 미만이어야 합니다.');
+    return false;
+  }
+
+  // 유효성 검사: 리뷰 내용의 최대 길이 검사
+  const maxReviewContentLength = 200;
+  if (reviewContent.length > maxReviewContentLength) {
+    alert('리뷰 내용은 200자 이하여야 합니다.');
+    return false;
+  }
+}
+
+
+
 function saveReview() {
-  // 디테일 페이지 영화 제목
+  checkInput()
+  // 디테일 페이지 영화 
   let detailPageTitle = document.querySelector('.detailPageTitle').textContent;
   // 인풋값 가져오기
   let reviewWriter = document.querySelector('.writer').value;
   let reviewPassword = document.querySelector('.password').value;
   let reviewContent = document.querySelector('.review-text').value;
-  // 유저 dateId
+
+
+  //유저 dateId
   let dateId = new Date().getTime();
   // 인풋값이 없으면 리뷰 저장 취소
   if ([reviewWriter, reviewPassword, reviewContent].includes('')) {
@@ -49,11 +85,11 @@ function saveReview() {
     reviews = JSON.parse(reviews);
     // 로컬 스토리지에 아무것도 없으면
   } else {
-   
+
     // 첫 실행
   }
   // 인풋값 배열에 추가하기, 단축 속성명?
-  
+
   reviews.push({
     movieId,
     detailPageTitle,
@@ -71,23 +107,23 @@ function renderReview() {
   // localStorage에서 꺼낸 문자열을 다시 배열로 변환
   reviews = localStorage.getItem('reviews'); // null, undefined
   reviews = JSON.parse(reviews);
-  
-    let detailPageReviews = reviews.filter(review => review.movieId === movieId);
 
-    // 로컬 스토리지 데이터를 가져와서 리뷰 리스트 만들기
-    const reviewList = document.querySelector('.review-list');
-    reviewList.innerHTML = '';
-    detailPageReviews.forEach(review => {
-      let postReviewWriter = review.reviewWriter;
-      let postReviewContent = review.reviewContent;
-      
-      reviewList.innerHTML += `<div class="mybox" id="${review.dateId}">
+  let detailPageReviews = reviews.filter(review => review.movieId === movieId);
+
+  // 로컬 스토리지 데이터를 가져와서 리뷰 리스트 만들기
+  const reviewList = document.querySelector('.review-list');
+  reviewList.innerHTML = '';
+  detailPageReviews.forEach(review => {
+    let postReviewWriter = review.reviewWriter;
+    let postReviewContent = review.reviewContent;
+
+    reviewList.innerHTML += `<div class="mybox" id="${review.dateId}">
       <div><input class="review-Writer" value="${postReviewWriter}"></input></div>
       <div><input class="review-Text" value="${postReviewContent}"></input></div>
       <button class="modify-Btn">수정</button>
       <button class="delete-Btn">삭제</button>
       </div>`;
-    });
+  });
 }
 
 // let detailPageTitle = document.querySelector('.detailPageTitle');
