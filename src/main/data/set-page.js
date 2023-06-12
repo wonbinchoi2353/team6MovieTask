@@ -1,4 +1,4 @@
-const setpage = function (arr) {
+const seepage = function (arr) {
   // 데이터를 찍는 함수
   let html = '';
 
@@ -19,4 +19,4 @@ const setpage = function (arr) {
   container.innerHTML = html;
 }
 
-export { setpage };
+export { seepage };

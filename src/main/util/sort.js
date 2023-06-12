@@ -1,4 +1,4 @@
-import { setpage } from '../data/set-page.js';
+import { seepage } from '../data/set-page.js';
 import { getMovies } from '../data/get-movies.js';
 
 export { sort_date, sort_title, sort_vote, sort };
@@ -10,7 +10,7 @@ async function sort_title() {
   // 이름 비교하여 객체를 정렬, 객체자체가 바뀌기 때문에 위험할 수 있다.
   // 하지만 함수마다 새롭게 데이터를 받아오기 때문에 그냥 사용
 
-  setpage(sort_data);
+  seepage(sort_data);
 }
 
 async function sort_date() {
@@ -18,7 +18,7 @@ async function sort_date() {
   let { results: movies } = await getMovies();
   const sort_data = movies.sort((a, b) => (a.release_date > b.release_date ? -1 : 1)); // sort_title과 동일
 
-  setpage(sort_data);
+  seepage(sort_data);
 }
 
 async function sort_vote() {
@@ -32,7 +32,7 @@ async function sort_vote() {
     else if (a.vote_count < b.vote_count) return 1;
   }); // 다중 조건을 걸어 평점 -> 표본의 수 를 통하여 평점이 같으면 표본수가 높은 순으로 정렬
 
-  setpage(sort_data);
+  seepage(sort_data);
 }
 
 const sort = function () {
